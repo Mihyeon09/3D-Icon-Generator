@@ -1,0 +1,5 @@
+{
+  "name": "AI 3D Icon Generator",
+  "description": "An application that uses a reference image and a detailed JSON style template to generate new 3D icons with a consistent aesthetic, powered by the Gemini API.",
+  "requestFramePermissions": []
+}
