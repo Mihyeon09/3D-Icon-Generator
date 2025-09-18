@@ -20,8 +20,8 @@ export default function JsonEditor({ value, onChange }: JsonEditorProps) {
         placeholder="Enter your JSON style guide here..."
       />
        <p className="text-xs text-gray-500 mt-2">
-          {/* Fix: Wrap the placeholder string in a JavaScript expression to prevent JSX from interpreting the curly braces as an object literal. */}
-          The <code className="bg-gray-700 p-1 rounded-sm text-blue-300">{'[{{\u0049CON_NAME}}]'}</code> placeholder will be replaced by your input. Advanced users can edit this JSON to fine-tune the style.
+          {/* Fix: Correctly display the placeholder string to match the one in the default prompt. */}
+          The <code className="bg-gray-700 p-1 rounded-sm text-blue-300">{'[[ICON_NAME]]'}</code> placeholder will be replaced by your input. Advanced users can edit this JSON to fine-tune the style.
        </p>
     </div>
   );

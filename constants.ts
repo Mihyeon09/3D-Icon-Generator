@@ -1,5 +1,5 @@
-export const INITIAL_JSON_PROMPT = `{
-  "task": "generate a [{{ICON_NAME}}] icon with this json style",
+const defaultPromptObject = {
+  "task": "generate a [[ICON_NAME]] icon with this json style",
   "icon_style": {
     "perspective": "isometric",
     "geometry": {
@@ -35,8 +35,8 @@ export const INITIAL_JSON_PROMPT = `{
       "usage": "Blues (vibrant main blue) and whites are the primary and most prominent colors for structural and main elements, forming the base of the design. Bright light blue is reserved for small, intentional accent details. Specific elements like suns, flames, car wheels, and headlights should use their inherent vibrant or expected colors as accents, ensuring readability, visual impact, and maintaining the overall bright blue-and-white dominant, yet colorful aesthetic of the reference set. Subtle gradients within the blues and whites are incorporated for added depth and visual interest, consistent with the reference."
     },
     "background": {
-      "color": "transparent",
-      "style": "purely transparent with alpha channel for PNG output",
+      "color": "#FFFFFF",
+      "style": "solid, clean, non-transparent white background",
       "texture": "none"
     },
     "stylistic_tone": "vibrant, modern, friendly, and clean, with a highly polished and premium digital aesthetic suitable for technology, services, and casual branding",
@@ -46,5 +46,6 @@ export const INITIAL_JSON_PROMPT = `{
       "interchangeability": "designed as an integral part of a cohesive and expandable icon system, ensuring new icons maintain a consistent visual language"
     }
   }
-}
-`;
+};
+
+export const DEFAULT_JSON_PROMPT = JSON.stringify(defaultPromptObject, null, 2);

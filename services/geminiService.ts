@@ -16,14 +16,15 @@ const fileToGenerativePart = async (file: File): Promise<Part> => {
 };
 
 export const generateIconFromReference = async (prompt: string, referenceImage: File): Promise<string> => {
+  // Fix: Add check for API_KEY to prevent runtime errors.
   if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable is not set.");
+    throw new Error("API_KEY environment variable is not set. Please follow the setup instructions.");
   }
   
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
   const imagePart = await fileToGenerativePart(referenceImage);
-  const textPart = { text: `Using the provided image as a style reference, create a new icon based on this task: "${prompt}". The final generated image must be perfectly square (1:1 aspect ratio).` };
+  const textPart = { text: prompt };
 
   try {
     const response = await ai.models.generateContent({
