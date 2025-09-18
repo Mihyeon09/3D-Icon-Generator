@@ -1,5 +1,5 @@
 const defaultPromptObject = {
-  "task": "Based on the provided reference image for style inspiration and the detailed JSON style guide below, generate a completely new 3D icon for '[[ICON_NAME]]'. The reference image dictates the aesthetic (lighting, materials, perspective), but you must NOT copy or include any objects from it in your output. Your final generated icon must strictly adhere to all specifications in this JSON.",
+  "task": "Based on the provided reference image for style inspiration and the detailed JSON style guide below, generate a single, focused, and beautifully detailed 3D representation for '[[ICON_NAME]]'. The icon should feel complete and iconic, avoiding excessive clutter. The reference image dictates the aesthetic (lighting, materials, perspective), but you must NOT copy or include any objects from it in your output. Your final generated icon must strictly adhere to all specifications in this JSON.",
   "output_requirements": {
     "image_dimensions": "2048x2048 pixels",
     "aspect_ratio": "1:1, perfectly square",
@@ -13,10 +13,10 @@ const defaultPromptObject = {
       "form_characteristics": "predominantly rounded and smooth, almost 'bubbly' shapes, with soft, friendly curves and no sharp edges for a playful, approachable appearance"
     },
     "composition": {
-      "element_count": "1-3 main, clearly defined objects, maintaining simplicity",
+      "element_count": "The main focus must be the primary subject ('[[ICON_NAME]]'). You may include small, tasteful, and integrated details that directly belong to the subject to make it feel complete and visually rich. However, avoid adding separate, standalone objects or excessive background elements. For example, an icon for a 'Christmas tree' should feature the tree as the hero. A few well-placed ornaments on the tree are perfect, but do not add separate gift boxes on the ground or a full background scene.",
       "spatial_depth": "distinct layering to create a strong sense of dimension and slight elevation from the base, with clear visual separation between elements",
       "scale_consistency": "uniform and harmonious object scale across the icon set",
-      "scene_density": "minimal to moderate, ensuring extreme clarity and a focused visual center without any clutter"
+      "scene_density": "Balanced and focused. The composition should be clean and easy to read, with enough detail to be interesting but without any unnecessary clutter that distracts from the main subject."
     },
     "lighting": {
       "type": "soft, diffused studio lighting with a clean feel",
