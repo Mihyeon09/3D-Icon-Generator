@@ -36,17 +36,19 @@ export default function GeneratedIcon({ iconUrl, isLoading }: GeneratedIconProps
       {isLoading ? (
         <LoadingState />
       ) : iconUrl ? (
-        <div className="flex flex-col items-center gap-4">
-          <img 
-            src={iconUrl} 
-            alt="Generated Icon" 
-            className="max-w-full max-h-full object-contain animate-fade-in"
-            style={{ animation: 'fadeIn 0.5s ease-in-out' }}
-          />
+        <div className="w-full h-full flex flex-col items-center justify-center gap-4">
+          <div className="flex-1 w-full min-h-0 flex items-center justify-center">
+            <img 
+              src={iconUrl} 
+              alt="Generated Icon" 
+              className="max-w-full max-h-full object-contain animate-fade-in"
+              style={{ animation: 'fadeIn 0.5s ease-in-out' }}
+            />
+          </div>
           <a
             href={iconUrl}
             download="generated-icon.png"
-            className="mt-4 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-bold rounded-md transition-colors"
+            className="flex-shrink-0 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-bold rounded-md transition-colors"
           >
             Download Icon
           </a>

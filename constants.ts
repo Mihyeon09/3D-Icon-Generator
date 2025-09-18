@@ -1,5 +1,10 @@
 const defaultPromptObject = {
-  "task": "generate a [[ICON_NAME]] icon with this json style",
+  "task": "Based on the provided reference image for style inspiration and the detailed JSON style guide below, generate a completely new 3D icon for '[[ICON_NAME]]'. The reference image dictates the aesthetic (lighting, materials, perspective), but you must NOT copy or include any objects from it in your output. Your final generated icon must strictly adhere to all specifications in this JSON.",
+  "output_requirements": {
+    "image_dimensions": "2048x2048 pixels",
+    "aspect_ratio": "1:1, perfectly square",
+    "background": "CRITICAL: The background MUST BE a solid, non-transparent, pure white color (#FFFFFF). The final image must NOT have any transparency or alpha channel."
+  },
   "icon_style": {
     "perspective": "isometric",
     "geometry": {
@@ -25,7 +30,7 @@ const defaultPromptObject = {
       "texture_realism": "stylized and pristine, focusing on the idealized cleanliness and reflectivity of new plastic and polished metal, rather than real-world imperfections"
     },
     "render_quality": {
-      "resolution": "ultra high-resolution 3D rendering (e.g., Octane Render or similar quality), optimized for sharp display on digital screens",
+      "resolution": "ultra high-resolution 3D rendering (target 2048x2048 pixels), optimized for sharp display on digital screens",
       "edge_definition": "extremely crisp and clean edges, without any outlines or strokes; object separation is achieved purely through distinct colors, strong lighting, and clear depth perception",
       "visual_clarity": "exceptional, with highly readable, almost iconic shapes that are immediately recognizable and visually appealing"
     },
@@ -36,7 +41,7 @@ const defaultPromptObject = {
     },
     "background": {
       "color": "#FFFFFF",
-      "style": "solid, clean, non-transparent white background",
+      "style": "solid, clean, non-transparent white background. This is a mandatory instruction.",
       "texture": "none"
     },
     "stylistic_tone": "vibrant, modern, friendly, and clean, with a highly polished and premium digital aesthetic suitable for technology, services, and casual branding",

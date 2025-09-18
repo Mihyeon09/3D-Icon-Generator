@@ -38,10 +38,15 @@ export const generateIconFromReference = async (prompt: string, referenceImage: 
     });
 
     if (response.candidates && response.candidates.length > 0) {
-      const imagePart = response.candidates[0].content.parts.find(part => part.inlineData);
-      if (imagePart && imagePart.inlineData) {
-        const base64ImageBytes: string = imagePart.inlineData.data;
-        const mimeType = imagePart.inlineData.mimeType;
+      // The response might contain multiple image parts. Typically, the edited or
+      // generated image is the last one in the parts array. We filter for all
+      // image parts and select the last one to avoid returning the input reference image.
+      const imageParts = response.candidates[0].content.parts.filter(part => part.inlineData);
+      const generatedImagePart = imageParts.pop(); // Gets the last element
+
+      if (generatedImagePart && generatedImagePart.inlineData) {
+        const base64ImageBytes: string = generatedImagePart.inlineData.data;
+        const mimeType = generatedImagePart.inlineData.mimeType;
         return `data:${mimeType};base64,${base64ImageBytes}`;
       }
     }
